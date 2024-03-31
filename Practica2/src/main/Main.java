@@ -74,6 +74,7 @@ public static void main(String args[]){
     }
     
     Cargaruta log= new Cargaruta();
+    log.llenartabla();
     log.setVisible(true);
 
 }
