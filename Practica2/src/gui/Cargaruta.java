@@ -129,6 +129,8 @@ public class Cargaruta extends javax.swing.JFrame implements Serializable{
         jTabbedPane1.setForeground(new java.awt.Color(51, 51, 51));
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTabbedPane1.setOpaque(true);
+        jTabbedPane1.setVerifyInputWhenFocusTarget(false);
 
         jPanel1.setBackground(new java.awt.Color(208, 228, 255));
 
@@ -593,18 +595,19 @@ public class Cargaruta extends javax.swing.JFrame implements Serializable{
             }
         });
 
+        tablafinal.setAutoCreateRowSorter(true);
         tablafinal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+
             },
             new String [] {
 
             }
         ));
+        tablafinal.setAutoscrolls(false);
+        tablafinal.setEnabled(false);
         jScrollPane2.setViewportView(tablafinal);
+        tablafinal.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1303,7 +1306,7 @@ llenartablafinal();
     public void llenartablafinal() {
     
         
-        DefaultTableModel t3 = new DefaultTableModel(new String[]{"id","inicio","fin","distancia","vehiculo","gasolina gastada"},listarutas.size());
+        DefaultTableModel t3 = new DefaultTableModel(new String[]{"id","inicio","fin","distancia","vehiculo","gasolina gastada"},rutaelegidalist.size());
         tablafinal.setModel(t3);
         TableModel t4 = tablafinal.getModel();
        
